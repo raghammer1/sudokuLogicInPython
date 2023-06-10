@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600&family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Sudoku play</title>
+  </head>
+  <body>
+    <h1 class="head">Sudoku Solver</h1>
+    <hr class="line" />
+    <div class="sec-head">
+      <a class="sec-head-mistakes">Mistakes:</a>
+      <h2 id="incorrect">0</h2>
+      <button id="hint" class="hint-btn">Hint</button>
+      <h2 id="hints">5</h2>
+    </div>
+    <hr class="line2" />
+    <!-- board -->
+    <div id="board"></div>
+    <br />
+    <div id="digits"></div>
+    <button id="submit" class="submit-btn">Submit</button>
+  </body>
+</html>

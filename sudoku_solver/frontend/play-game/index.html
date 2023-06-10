@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Sudoku-solver</title>
+  </head>
+  <body>
+    <div class="grid--2 grid--2-cols grid--center-v">
+      <div class="input-grid grid grid--11-cols">
+        <input type="number" class="input one num[0][0]" />
+        <input type="number" class="input num[0][1]" />
+        <input type="number" class="input num[0][2]" />
+        <div class="vl"></div>
+        <input type="number" class="input num[0][3]" />
+        <input type="number" class="input num[0][4]" />
+        <input type="number" class="input num[0][5]" />
+        <div class="vl"></div>
+        <input type="number" class="input num[0][6]" />
+        <input type="number" class="input num[0][7]" />
+        <input type="number" class="input num[0][8]" />
+
+        <input type="number" class="input one num[1][0]" />
+        <input type="number" class="input num[1][1]" />
+        <input type="number" class="input num[1][2]" />
+        <div class="vl"></div>
+        <input type="number" class="input num[1][3]" />
+        <input type="number" class="input num[1][4]" />
+        <input type="number" class="input num[1][5]" />
+        <div class="vl"></div>
+        <input type="number" class="input num[1][6]" />
+        <input type="number" class="input num[1][7]" />
+        <input type="number" class="input num[1][8]" />
+
+        <input type="number" class="input one hor-line-below num[2][0]" />
+        <input type="number" class="input hor-line-below num[2][1]" />
+        <input type="number" class="input hor-line-below num[2][2]" />
+        <div class="vl"></div>
+        <input type="number" class="input hor-line-below num[2][3]" />
+        <input type="number" class="input hor-line-below num[2][4]" />
+        <input type="number" class="input hor-line-below num[2][5]" />
+        <div class="vl"></div>
+        <input type="number" class="input hor-line-below num[2][6]" />
+        <input type="number" class="input hor-line-below num[2][7]" />
+        <input type="number" class="input hor-line-below num[2][8]]" />
+
+        <hr class="hor-line" />
+        <hr class="hor-line" />
+        <hr class="hor-line" />
+        <hr class="hor-line" />
+        <hr class="hor-line" />
+        <hr class="hor-line" />
+        <hr class="hor-line" />
+        <hr class="hor-line" />
+        <hr class="hor-line" />
+        <hr class="hor-line" />
+
+        <hr class="hor-line" />
+        <input type="number" class="input one num[3][0]" />
+        <input type="number" class="input num[3][1]" />
+        <input type="number" class="input num[3][2]" />
+        <div class="vl"></div>
+        <input type="number" class="input num[3][3]" />
+        <input type="number" class="input num[3][4]" />
+        <input type="number" class="input num[3][5]" />
+        <div class="vl"></div>
+        <input type="number" class="input num[3][6]" />
+        <input type="number" class="input num[3][7]" />
+        <input type="number" class="input num[3][8]" />
+
+        <input type="number" class="input one num[4][0]" />
+        <input type="number" class="input num[4][1]" />
+        <input type="number" class="input num[4][2]" />
+        <div class="vl"></div>
+        <input type="number" class="input num[4][3]" />
+        <input type="number" class="input num[4][4]" />
+        <input type="number" class="input num[4][5]" />
+        <div class="vl"></div>
+        <input type="number" class="input num[4][6]" />
+        <input type="number" class="input num[4][7]" />
+        <input type="number" class="input num[4][8]" />
+
+        <input type="number" class="input one hor-line-below num[5][0]" />
+        <input type="number" class="input hor-line-below num[5][1]" />
+        <input type="number" class="input hor-line-below num[5][2]" />
+        <div class="vl"></div>
+        <input type="number" class="input hor-line-below num[5][3]" />
+        <input type="number" class="input hor-line-below num[5][4]" />
+        <input type="number" class="input hor-line-below num[5][5]" />
+        <div class="vl"></div>
+        <input type="number" class="input hor-line-below num[5][6]" />
+        <input type="number" class="input hor-line-below num[5][7]" />
+        <input type="number" class="input hor-line-below num[5][8]" />
+
+        <hr class="hor-line" />
+        <hr class="hor-line" />
+        <hr class="hor-line" />
+
+        <hr class="hor-line" />
+        <hr class="hor-line" />
+        <hr class="hor-line" />
+        <hr class="hor-line" />
+        <hr class="hor-line" />
+        <hr class="hor-line" />
+        <hr class="hor-line" />
+        <hr class="hor-line" />
+        <input type="number" class="input one num[6][0]" />
+        <input type="number" class="input num[6][1]" />
+        <input type="number" class="input num[6][2]" />
+        <div class="vl"></div>
+        <input type="number" class="input num[6][3]" />
+        <input type="number" class="input num[6][4]" />
+        <input type="number" class="input num[6][5]" />
+        <div class="vl"></div>
+        <input type="number" class="input num[6][6]" />
+        <input type="number" class="input num[6][7]" />
+        <input type="number" class="input num[6][8]" />
+
+        <input type="number" class="input one num[7][0]" />
+        <input type="number" class="input num[7][1]" />
+        <input type="number" class="input num[7][2]" />
+        <div class="vl"></div>
+        <input type="number" class="input num[7][3]" />
+        <input type="number" class="input num[7][4]" />
+        <input type="number" class="input num[7][5]" />
+        <div class="vl"></div>
+        <input type="number" class="input num[7][6]" />
+        <input type="number" class="input num[7][7]" />
+        <input type="number" class="input num[7][8]" />
+
+        <input type="number" class="input one hor-line-below num[8][0]" />
+        <input type="number" class="input hor-line-below num[8][1]" />
+        <input type="number" class="input hor-line-below num[8][2]" />
+        <div class="vl"></div>
+        <input type="number" class="input hor-line-below num[8][3]" />
+        <input type="number" class="input hor-line-below num[8][4]" />
+        <input type="number" class="input hor-line-below num[8][5]" />
+        <div class="vl"></div>
+        <input type="number" class="input hor-line-below num[8][6]" />
+        <input type="number" class="input hor-line-below num[8][7]" />
+        <input type="number" class="input hor-line-below num[8][8]" />
+      </div>
+      <div class="op">
+        <div class="options-menu">
+          <button class="btn">Hint</button>
+          <button class="btn">Submit</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Carousel Component</title>
+
+    <style>
+      /*
+      SPACING SYSTEM (px)
+      2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+      FONT SIZE SYSTEM (px)
+      10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+      */
+      /*
+      MAIN COLOR: #087f5b
+      GREY COLOR: #343a40
+
+      can put a loop on child elements then make the background 
+      color more whiter and move down the line put a timer as in 
+      the main game
+      */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif;
+        color: #343a40;
+        line-height: 1;
+        margin-top: 20px;
+        background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.6)),
+          url(background.jpg);
+        background-size: cover;
+        height: 100vh;
+      }
+
+      .carousel {
+        width: 800px;
+        margin: 0 auto;
+        background-color: rgb(51, 51, 51, 0.9);
+        /* padding: 32px; */
+        /* padding-left: 86px; */
+        /* padding-right: 48px; */
+        padding: 32px 48px 32px 86px;
+
+        border-radius: 8px;
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        gap: 86px;
+        margin-bottom: 20px;
+      }
+
+      img {
+        height: 200px;
+        border-radius: 8px;
+        transform: scale(1.5);
+        box-shadow: 0 12px 24px rgba(255, 255, 255, 0.25);
+      }
+
+      .testimonial-text {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+        margin-bottom: 32px;
+        color: #fff;
+      }
+
+      .testimonial-author {
+        font-size: 18px;
+        margin-bottom: 4px;
+        color: #858787;
+      }
+
+      .testimonial-job {
+        font-size: 12px;
+        color: #c4f0ff;
+      }
+
+      /* CONTROLS */
+      .btn {
+        background-color: #fff;
+        border: none;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        position: absolute;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn--left {
+        /* In relation to PARENTE ELEMENT */
+        left: 0;
+        top: 50%;
+
+        /* In relation to ELEMENT ITSELF */
+        transform: translate(-50%, -50%);
+      }
+
+      .btn--right {
+        right: 0;
+        top: 50%;
+
+        transform: translate(50%, -50%);
+      }
+
+      .btn-icon {
+        height: 24px;
+        width: 24px;
+        stroke: #087f5b;
+      }
+      .dots {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 32px);
+
+        display: flex;
+        gap: 12px;
+      }
+
+      .dot {
+        height: 12px;
+        width: 12px;
+        background-color: #fff;
+        border: 2px solid #00bdfc;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .dot--fill {
+        background-color: #00bdfc;
+      }
+
+      .play-now-btn {
+        color: #fff;
+        font-size: 20px;
+        display: flex;
+        margin: auto auto;
+        /* margin-left: 640px; */
+        /* max-width: 40px; */
+        background-color: black;
+        /* transform: translate(0, -50%); */
+        /* margin-top: 1000px; */
+        padding: 20px 50px;
+        /* max-width: 190px; */
+        width: fit-content;
+        align-items: center;
+
+        border-radius: 90px;
+        cursor: pointer;
+        text-decoration: none;
+        line-height: 1.2em;
+        color: #0000;
+        text-shadow: 0 0 rgb(255, 255, 255), 0 1.2em #000000;
+        overflow: hidden;
+        transition: 0.3s;
+      }
+
+      .play-now-btn:hover,
+      .play-now-btn:focus {
+        text-shadow: 0 -1.2em #000, 0 0 #00bdfc;
+      }
+
+      img {
+        width: 100px;
+        height: auto;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      /* .sudoku-img {
+        width: 135px;
+        box-shadow: 0 12px 24px rgba(255, 255, 255, 0.25);
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="all-rules">
+      <header>
+        <div class="carousel">
+          <img src="numArr.png" alt="Maria de Almeida" />
+          <blockquote class="testimonial">
+            <p class="testimonial-text">
+              "There will be a list of numbers (as shown in the image) on the
+              bottom of the sudoku grid from which you can select the number
+              that you want to fill"
+            </p>
+            <p class="testimonial-author">Step 1</p>
+            <!-- <p class="testimonial-job">
+              Senior Product Manager at EDP Comercial
+            </p> -->
+          </blockquote>
+        </div>
+        <div class="carousel">
+          <img src="sudoBoard.png" alt="Maria de Almeida" class="sudoku-img" />
+          <blockquote class="testimonial">
+            <p class="testimonial-text">
+              "Then you can select the box in the sudoku board and hence if the
+              selection is correct the sudoku will be filled else a mistake will
+              be added and no digit will be filled in"
+            </p>
+            <p class="testimonial-author">Step 2</p>
+            <!-- <p class="testimonial-job">
+              Senior Product Manager at EDP Comercial
+            </p> -->
+          </blockquote>
+        </div>
+        <div class="carousel">
+          <img src="mistakes.png" alt="Maria de Almeida" class="sudoku-img" />
+          <blockquote class="testimonial">
+            <p class="testimonial-text">
+              "This is the mistakes counter if you exceed 5 mistakes you will
+              lose"
+            </p>
+            <p class="testimonial-author">Info</p>
+            <!-- <p class="testimonial-job">
+              Senior Product Manager at EDP Comercial
+            </p> -->
+          </blockquote>
+        </div>
+        <div class="carousel">
+          <img src="hint.png" alt="Maria de Almeida" class="sudoku-img" />
+          <blockquote class="testimonial">
+            <p class="testimonial-text">
+              "You have 5 hints to use which will basically place a number at a
+              random place on the board"
+            </p>
+            <p class="testimonial-author">Info</p>
+            <!-- <p class="testimonial-job">
+              Senior Product Manager at EDP Comercial
+            </p> -->
+          </blockquote>
+        </div>
+        <div class="carousel">
+          <img src="solve.png" alt="Maria de Almeida" class="sudoku-img" />
+          <blockquote class="testimonial">
+            <p class="testimonial-text">
+              "We also have a solve button at the end which will give you the
+              solution to the whole board"
+            </p>
+            <p class="testimonial-author">Info</p>
+            <!-- <p class="testimonial-job">
+              Senior Product Manager at EDP Comercial
+            </p> -->
+          </blockquote>
+        </div>
+        <div class="carousel">
+          <img src="submit.png" alt="Maria de Almeida" class="sudoku-img" />
+          <blockquote class="testimonial">
+            <p class="testimonial-text">
+              "Finally you can use the submit button to check the solution"
+            </p>
+            <p class="testimonial-author">Info</p>
+            <!-- <p class="testimonial-job">
+              Senior Product Manager at EDP Comercial
+            </p> -->
+          </blockquote>
+        </div>
+      </header>
+    </div>
+    <a href="#" class="play-now-btn">Play Now</a>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+generator will generator a sudoku save it in a new file
+then it will call the solver with that file name and and solve the sudoku
+and also save the solved sudoku in a new file
+
+
+create a 9*9 grid inside a 2*2 grid with html css
+
+then for the hints button give a hint but when hints == 0 hide the hint 
+button by adding the hiddent class in css with js
+
+player can do two things with the interface they can either play the sudoku
+solver or get there own sudoku solved
+
+the solved and whatever sudoku is needed in the main js program can be
+taken from the files that it has been saved in
+
+what we can do is that set class name of all
+as index nuumber then set value accordingly by
+the array you get from reading the file
+
+
+on hint generate two random digits between 1 and 9 and then fill that 
+index by searching for that index in the 2d array
+
+document.querySelector(`.guess[${i}][${j}]`).value = '';
+number = document.querySelector(`.guess[${i}][${j}]`).value;
+
+use this above method to see whats in the inputs and then save all 
+values to a 2d array and then save it into a file then read that
+run the loop again and set the values and change background color 
+to green
